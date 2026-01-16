@@ -42,7 +42,7 @@ Comment=でびるコネクショん
 Exec=${INSTALL_DIR}/electron
 Icon=${INSTALL_DIR}/devilconnection.png
 Type=Application
-Categories=Games;
+Categories=Game;
 EOM
 
 # finally copy app.asar

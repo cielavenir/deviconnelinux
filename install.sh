@@ -11,6 +11,11 @@ fi
 
 SCRIPT_DIR=$(dirname $(realpath $0))
 INSTALL_DIR=${SCRIPT_DIR}/deviconnelinux
+APP_ASAR="app.asar"
+
+if [ -f "${SCRIPT_DIR}/config.sh" ]; then
+    . "${SCRIPT_DIR}/config.sh"
+fi
 
 mkdir -p "${INSTALL_DIR}"
 wget https://github.com/electron/electron/releases/download/v39.2.7/electron-v39.2.7-linux-x64.zip
@@ -25,4 +30,4 @@ mkdir -p "${INSTALL_DIR}/resources/resources/app.asar.unpacked/node_modules/stea
 cp -r package/dist "${INSTALL_DIR}/resources/resources/app.asar.unpacked/node_modules/steamworks.js/"
 rm -rf package
 
-# cp
+cp "${APP_ASAR}" "${INSTALL_DIR}/resources/resources/app.asar"

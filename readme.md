@@ -1,3 +1,7 @@
 ## deviconnelinux
 
-DevilConnection running on Linux, **with intact app.asar**
+DevilConnection running on Linux x86_64, **with intact app.asar**
+
+## arm64
+
+Steam SDK started to support Linux arm64 only from 1.63 (2025 Nov). steamworks.js needs to be rebuilt, but it does not look working...

@@ -40,6 +40,7 @@ cat <<EOM > ~/.local/share/applications/devilconnection.desktop
 Name=でびるコネクショん
 Comment=でびるコネクショん
 Exec=${INSTALL_DIR}/electron
+Icon=${INSTALL_DIR}/devilconnection.png
 Type=Application
 Categories=Games;
 EOM

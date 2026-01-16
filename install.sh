@@ -18,11 +18,15 @@ if [ -f "${SCRIPT_DIR}/config.sh" ]; then
 fi
 
 mkdir -p "${INSTALL_DIR}"
+
+# setup electron directory structure
 wget https://github.com/electron/electron/releases/download/v39.2.7/electron-v39.2.7-linux-x64.zip
 7z x -o${INSTALL_DIR} electron-v39.2.7-linux-x64.zip
 rm electron-v39.2.7-linux-x64.zip
 
+# copy wrapper application
 cp -r data/resources "${INSTALL_DIR}/"
+cp data/devilconnection.png "${INSTALL_DIR}/"
 
 # prepare app.asar.unpacked from npm, in case the file is dropped
 wget -O - "$(wget -O - https://registry.npmjs.org/steamworks.js/0.4.0 | jq -r .dist.tarball)" | tar xz package/dist
@@ -30,4 +34,15 @@ mkdir -p "${INSTALL_DIR}/resources/resources/app.asar.unpacked/node_modules/stea
 cp -r package/dist "${INSTALL_DIR}/resources/resources/app.asar.unpacked/node_modules/steamworks.js/"
 rm -rf package
 
+# create desktop entry
+cat <<EOM > ~/.local/share/applications/devilconnection.desktop
+[Desktop Entry]
+Name=でびるコネクショん
+Comment=でびるコネクショん
+Exec=${INSTALL_DIR}/electron
+Type=Application
+Categories=Games;
+EOM
+
+# finally copy app.asar
 cp "${APP_ASAR}" "${INSTALL_DIR}/resources/resources/app.asar"

@@ -17,6 +17,12 @@ if [ -f "${SCRIPT_DIR}/config.sh" ]; then
     . "${SCRIPT_DIR}/config.sh"
 fi
 
+if [ ! -f "${APP_ASAR}" ]; then
+    # check APP_ASAR existence before start
+    echo "${APP_ASAR} does not exist"
+    exit 1
+fi
+
 mkdir -p "${INSTALL_DIR}"
 
 # setup electron directory structure

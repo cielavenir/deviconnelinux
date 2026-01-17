@@ -3,6 +3,8 @@
 - DevilConnection running on Linux x86_64, **with intact app.asar.**
 - Also **desktop entry is set,** so you can launch the game from application launcher.
 
+![Shown in application launcher](demo_applicationlauncher.png)
+
 ## installation
 
 - copy config.sh.sample to config.sh, fill APP_ASAR path (and optionally INSTALL_DIR), then run install.sh

@@ -1,4 +1,5 @@
-// main.js assisted by ChatGPT
+// main.js ChatGPT-assisted, presented by @cielavenir
+// license: CC0 (public domain)
 
 // launcher.mjs (ESM)
 import { app, BrowserWindow, Menu, protocol } from 'electron';

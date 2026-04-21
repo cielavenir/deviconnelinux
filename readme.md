@@ -28,3 +28,9 @@ Steam SDK started to support Linux arm64 only from 1.63 (2025 Nov). steamworks.j
 
 - electron_latest_patched.js, blob_patched.js and devilconnection.png are _copyrighted materials._
 - The icon was extracted from demo version exe, so it is not paid material at least, but if it has issues I would remove.
+
+## April Fool
+
+- https://github.com/cielavenir/deviconnelinux/blob/master/data/resources/app/main.js has a line mentioning "openDevTools", uncommenting it will open Chrome developer tools, where you can inject any code. Yes it is real.
+- Actually I used it to write the workaround patch https://github.com/cielavenir/deviconnelinux/blob/master/data/resources/app/blob_patched.js .
+- Also you can use that trick in official Windows/macOS builds as well.
